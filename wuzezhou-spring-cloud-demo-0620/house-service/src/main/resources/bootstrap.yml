@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: house-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: house-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db6?characterEncading=utf8&serverTimezone=GMT
+    username: root
+    password: 123
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 10MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  resources:
+    static-locations: file:D:\\pic\\
+mybatis-plus:
+  type-aliases-package: com.wzz.houseservice.pojo
+  mapper-locations: classpath*:/mappers/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl
+logging:
+  file:
+    path: D:\\log\\
+    max-size: 10MB
+
