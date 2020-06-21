@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: consul-client-wzz
+  profiles:
+    active: dev
+  cloud:
+    consul:
+
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: consul-client-wzz
+      config:
+        prefix: config
+        format: yaml
+        profile-separator: ':'
+        data-key: data
+
